@@ -1,0 +1,30 @@
+<h1>All The Named Cats:</h1>
+
+<% if @cats.empty? %>
+  <span style="font-size: 20px;">
+    There aren't any named cats yet!
+  </span>
+
+  <div style="padding-top: 20px;">
+    Name a <a href="/cats/new">cat</a>.
+  </div>
+<% else %>
+  <ul>
+  <% @cats.each do |cat| %>
+    <li>
+      <%= cat.name %>
+    </li>
+  <% end %>
+  </ul>
+
+  <div style="padding-top: 20px;">
+    Name another <a href="/cats/new">cat</a>.
+  </div>
+<% end %>
+
+<div>
+  Name a <a href="/dogs/new">dog</a>.
+</div>
+<div style="padding-top: 15px;">
+  <a href="/">Home</a>
+</div>

@@ -1,4 +1,6 @@
 class Cat
+  attr_reader :name
+
   def self.all
     @cats ||= []
   end

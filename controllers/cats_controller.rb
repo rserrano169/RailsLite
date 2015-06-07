@@ -3,11 +3,12 @@ require_relative '../models/cat.rb'
 
 class CatsController < ControllerBase
   def index
-
+    @cats = Cat.all
+    render :index
   end
 
   def show
-
+    render :show
   end
 
   def new
@@ -16,6 +17,12 @@ class CatsController < ControllerBase
   end
 
   def create
+    @cat = Cat.new(params["cat"])
 
+    if @cat.save
+      redirect_to "/cats"
+    else
+      render :new
+    end
   end
 end

@@ -1,4 +1,6 @@
 class Dog
+  attr_reader :name
+
   def self.all
     @dogs ||= []
   end

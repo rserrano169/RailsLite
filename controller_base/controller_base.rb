@@ -6,7 +6,7 @@ require_relative '../params/params.rb'
 require_relative '../session/session.rb'
 
 class ControllerBase
-  attr_reader :req, :res
+  attr_reader :req, :res, :params
 
   def initialize(req, res, route_params = {})
     @req, @res = req, res

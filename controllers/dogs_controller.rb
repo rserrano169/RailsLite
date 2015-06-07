@@ -8,7 +8,7 @@ class DogsController < ControllerBase
   end
 
   def show
-
+    render :show
   end
 
   def new
@@ -17,6 +17,12 @@ class DogsController < ControllerBase
   end
 
   def create
+    @dog = Dog.new(params["dog"])
 
+    if @dog.save
+      redirect_to "/dogs"
+    else
+      render :new
+    end
   end
 end
