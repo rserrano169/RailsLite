@@ -12,7 +12,8 @@ class DogsController < ControllerBase
   end
 
   def new
-
+    @dog = Dog.new
+    render :new
   end
 
   def create
