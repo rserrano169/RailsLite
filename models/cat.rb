@@ -5,8 +5,8 @@ class Cat
     @cats ||= []
   end
 
-  def self.find(cat_id_str)
-    Cat.all.select {|cat| cat.id == cat_id_str.to_i}[0]
+  def self.find(cat_id)
+    Cat.all.select {|cat| cat.id == cat_id.to_i}[0]
   end
 
   def initialize(params = {})

@@ -5,8 +5,8 @@ class Dog
     @dogs ||= []
   end
 
-  def self.find(dog_id_str)
-    Dog.all.select {|dog| dog.id == dog_id_str.to_i}[0]
+  def self.find(dog_id)
+    Dog.all.select {|dog| dog.id == dog_id.to_i}[0]
   end
 
   def initialize(params = {})
