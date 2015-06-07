@@ -17,7 +17,7 @@ class Route
     match_data = @pattern.match(req.path)
     route_params = Hash[match_data.names.zip(match_data.captures)]
     @controller_class
-    .new(req, res, route_params)
-    .invoke_action(@action_name)
+      .new(req, res, route_params)
+      .invoke_action(@action_name)
   end
 end

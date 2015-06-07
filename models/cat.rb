@@ -3,7 +3,7 @@ class Cat
     @cats ||= []
   end
 
-  def initialize{params = {}}
+  def initialize(params = {})
     params ||= {}
     @name = params["name"]
     @sentences = [

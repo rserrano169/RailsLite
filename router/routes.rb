@@ -1,7 +1,7 @@
 module Routes
   def create_routes(router)
     router.draw do
-      
+      get Regexp.new("^/$"), RootsController, :root
       get Regexp.new("^/dogs/new$"), DogsController, :new
       post Regexp.new("^/dogs$"), DogsController, :create
       get Regexp.new("^/dogs$"), DogsController, :index
