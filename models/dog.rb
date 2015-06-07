@@ -1,5 +1,5 @@
 class Dog
-  attr_reader :name
+  attr_reader :name, :id
 
   def self.all
     @dogs ||= []
@@ -7,6 +7,7 @@ class Dog
 
   def initialize(params = {})
     params ||= {}
+    @id = set_new_id
     @name = params["name"]
     @sentences = [
       "Hi!",
@@ -49,5 +50,19 @@ class Dog
 
   def speak
     @sentences.sample
+  end
+
+  def set_new_id
+    used_ids = []
+    Dog.all.each do |dog|
+      used_ids << dog.id
+    end
+
+    id = 1
+    while used_ids.include?(id)
+      id += 1
+    end
+
+    id
   end
 end

@@ -7,6 +7,7 @@ class Cat
 
   def initialize(params = {})
     params ||= {}
+    @id = set_new_id
     @name = params["name"]
     @sentences = [
       "...",
@@ -49,5 +50,19 @@ class Cat
 
   def speak
     @sentences.sample
+  end
+
+  def set_new_id
+    used_ids = []
+    Cat.all.each do |dog|
+      used_ids << dog.id
+    end
+
+    id = 1
+    while used_ids.include?(id)
+      id += 1
+    end
+
+    id
   end
 end
