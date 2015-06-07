@@ -1,4 +1,4 @@
-require_relative '../controller_base/controller_base.rb'
+require_relative '../../config/controller_base/controller_base.rb'
 require_relative '../models/dog.rb'
 
 class DogsController < ControllerBase

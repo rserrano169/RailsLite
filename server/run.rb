@@ -1,7 +1,7 @@
 require 'webrick'
-require_relative './router/router.rb'
-require_relative './router/routes.rb'
-Dir[File.join(File.dirname(__FILE__), 'controllers', '*.rb')].each {|file| require file }
+require_relative './config/router/router.rb'
+require_relative './config/router/routes.rb'
+Dir[File.join(File.dirname(__FILE__), 'app', 'controllers', '*.rb')].each {|file| require file }
 include Routes
 
 router = Router.new

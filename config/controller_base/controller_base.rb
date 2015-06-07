@@ -49,8 +49,9 @@ class ControllerBase
     dir_path = File.dirname(__FILE__)
     template_file_name = File.join(
       dir_path,
-      "..",
-      "views",
+      '..', '..',
+      'app',
+      'views',
       controller_name,
       "#{template_name}.html.erb"
     )
