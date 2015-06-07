@@ -4,6 +4,7 @@
   <label>
     Name
     <input type="text" name="dog[name]" value="" autofocus="autofocus">
+    <input type="hidden" name="dog[id]" value="<%= @dog.id %>">
   </label>
 
   <button>Add Dog</button>
@@ -15,5 +16,14 @@
 </div>
 
 <div>
+  <span style="display: block;">
+    See all the named <a href="/dogs">dogs</a>.
+  </span>
+  <span style="display: block;">
+    See all the named <a href="/cats">cats</a>.
+  </span>
+</div>
+
+<div style="padding-top: 10px;">
   <a href="/">Home</a>
 </div>

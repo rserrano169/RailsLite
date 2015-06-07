@@ -3,7 +3,8 @@
 <form action="/cats" method="post">
   <label>
     Name
-    <input type="text" name="cat[name]" value="" autofocus="autofocus">
+    <input type="text" name="cat[name]" value="<%= @cat.name %>" autofocus="autofocus">
+    <input type="hidden" name="cat[id]" value="<%= @cat.id %>">
   </label>
 
   <button>Add Cat</button>
@@ -15,5 +16,14 @@
 </div>
 
 <div>
+  <span style="display: block;">
+    See all the named <a href="/cats">cats</a>.
+  </span>
+  <span style="display: block;">
+    See all the named <a href="/dogs">dogs</a>.
+  </span>
+</div>
+
+<div style="padding-top: 10px;">
   <a href="/">Home</a>
 </div>

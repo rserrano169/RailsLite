@@ -5,6 +5,10 @@ class Dog
     @dogs ||= []
   end
 
+  def self.find(dog_id_str)
+    Dog.all.select {|dog| dog.id == dog_id_str.to_i}[0]
+  end
+
   def initialize(params = {})
     params ||= {}
     @id = set_new_id
@@ -16,7 +20,9 @@ class Dog
       "I'm hungry!",
       "You're my best friend!",
       "I like talking.",
-      "Grrr..."
+      "Grrr...",
+      "WOOF!!!",
+      "...woof..."
     ]
   end
 

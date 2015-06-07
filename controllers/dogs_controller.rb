@@ -8,6 +8,7 @@ class DogsController < ControllerBase
   end
 
   def show
+    @dog = Dog.find(params["id"])
     render :show
   end
 

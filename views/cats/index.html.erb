@@ -12,7 +12,9 @@
   <ul>
     <% @cats.each do |cat| %>
       <li>
-        <b><%= cat.name %></b> says, "<%= cat.speak %>"
+        <a href="/cats/<%= cat.id %>">
+          <b><%= cat.name %></b></a>
+        says, "<%= cat.speak %>"
       </li>
     <% end %>
   </ul>

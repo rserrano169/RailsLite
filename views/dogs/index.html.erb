@@ -12,7 +12,9 @@
   <ul>
     <% @dogs.each do |dog| %>
       <li>
-        <b><%= dog.name %></b> says, "<%= dog.speak %>"
+        <a href="/dogs/<%= dog.id %>">
+          <b><%= dog.name %></b></a>
+        says, "<%= dog.speak %>"
       </li>
     <% end %>
   </ul>

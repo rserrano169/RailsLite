@@ -1,8 +1,12 @@
 class Cat
-  attr_reader :name
+  attr_reader :name, :id
 
   def self.all
     @cats ||= []
+  end
+
+  def self.find(cat_id_str)
+    Cat.all.select {|cat| cat.id == cat_id_str.to_i}[0]
   end
 
   def initialize(params = {})
@@ -16,7 +20,9 @@ class Cat
       "Fine. You can stay. For now.",
       "Bye.",
       "Zzzz...",
-      "Pur-r-r-r..."
+      "Pur-r-r-r...",
+      "...meow...",
+      "MEEEEOOWWWW!"
     ]
   end
 
