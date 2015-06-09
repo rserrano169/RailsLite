@@ -4,17 +4,17 @@ require_relative '../config/controller_base/controller_base.rb'
 
 describe Params do
   before(:all) do
-    class CatsController < ControllerBase
+    class UsersController < ControllerBase
       def index
-        @cats = ["Gizmo"]
+        @users = ["username"]
       end
     end
   end
-  after(:all) { Object.send(:remove_const, "CatsController") }
+  after(:all) { Object.send(:remove_const, "UsersController") }
 
   let(:req) { WEBrick::HTTPRequest.new(Logger: nil) }
   let(:res) { WEBrick::HTTPResponse.new(HTTPVersion: '1.0') }
-  let(:cats_controller) { CatsController.new(req, res) }
+  let(:users_controller) { UsersController.new(req, res) }
 
   it "handles an empty request" do
     expect { Params.new(req) }.to_not raise_error
